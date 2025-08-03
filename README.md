@@ -3,6 +3,18 @@ This repository contains a parameterized SystemVerilog implementation of an N_SI
 
 ---
 
+## 📚 Table of Contents
+
+- [About](#about)
+  - [Systolic Overview](#systolic-overview)
+- [Architecture](#architecture)
+  - [PE](#pe)
+- [Parameterized Latency](#parameterized-latency)
+- [Waveform](#waveform)
+- [📁 Directory Structure](#-directory-structure)
+
+---
+
 ## About
 
 Language: `SystemVerilog`
@@ -14,7 +26,7 @@ Documentation: Includes a report with diagrams, waveforms, and logs
 ### Systolic Overview
 Systolic arrays are specialized parallel computing architectures designed to perform efficient, pipelined computations, particularly for matrix operations. The term "systolic" draws from the biological analogy of the heart's rhythmic contractions, reflecting the synchronized, rhythmic flow of data through a grid of processing elements (PEs). This section introduces the concept of systolic and semi-systolic architectures, focusing on their application in 1D vector multiplication and the role of retiming in optimizing circuit performance for hardware implementations.
 
-- For a detailed exploration, refer to the full report.
+> 📄 For a detailed exploration, refer to the full report in the `Doc/` folder.
 
 ---
 
@@ -66,7 +78,7 @@ Run `systolic_array_tb`
 
 ![Wavefoem](Pictures/Wavefoem.PNG)
 
-- For a detailed exploration, refer to file.log txt file.
+> For a detailed exploration, refer to file.log txt file in the `Doc/` folder.
 
 ---
 
