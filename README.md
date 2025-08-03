@@ -31,6 +31,8 @@ matrix sizes and data widths.
 
 ![Architecture](Pictures/Architecture.jpg)
 
+![Image](https://github.com/user-attachments/assets/3bc7074c-2d4c-4f7b-8531-d5dff86bb735)
+
 ### PE 
 
 Each Processing Element (PE) in the systolic array performs the fundamental 
