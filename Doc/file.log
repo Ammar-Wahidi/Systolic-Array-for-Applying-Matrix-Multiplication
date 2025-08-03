@@ -1,0 +1,202 @@
+QuestaSim-64 qrun 2024.3_1 Utility 2024.10 Oct 17 2024
+Start time: 12:34:29 on Jul 27,2025
+qrun -batch -access=rw+/. -timescale 1ns/1ns -mfcu design.sv testbench.sv -voptargs="+acc=npr" -do " run 30 ms; exit" 
+Creating library 'qrun.out/work'.
+QuestaSim-64 vlog 2024.3_1 Compiler 2024.10 Oct 17 2024
+Start time: 12:34:29 on Jul 27,2025
+vlog -timescale 1ns/1ns -mfcu design.sv testbench.sv -work qrun.out/work -statslog qrun.out/stats_log -writesessionid "+qrun.out/top_dus" -csession=incr 
+-- Compiling module systolic_array
+-- Compiling module PE
+-- Compiling module Controller
+-- Compiling module mux_out
+-- Compiling module matrix_sep
+-- Compiling module systolic_array_tb
+
+Top level modules:
+	systolic_array_tb
+End time: 12:34:29 on Jul 27,2025, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0
+QuestaSim-64 vopt 2024.3_1 Compiler 2024.10 Oct 17 2024
+** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+Start time: 12:34:29 on Jul 27,2025
+vopt -access=rw+/. -timescale 1ns/1ns -mfcu "+acc=npr" -findtoplevels qrun.out/work+1+ -work qrun.out/work -statslog qrun.out/stats_log -csession=incr -o qrun_opt -csessionid=2 
+
+Top level modules:
+	systolic_array_tb
+
+Analyzing design...
+-- Loading module systolic_array_tb
+-- Loading module systolic_array
+-- Loading module Controller
+-- Loading module mux_out
+-- Loading module matrix_sep
+-- Loading module PE
+Optimizing 6 design-units (inlining 0/21 module instances):
+-- Optimizing module systolic_array(fast)
+-- Optimizing module systolic_array_tb(fast)
+-- Optimizing module Controller(fast)
+-- Optimizing module PE(fast)
+-- Optimizing module matrix_sep(fast)
+-- Optimizing module mux_out(fast)
+Optimized design name is qrun_opt
+End time: 12:34:30 on Jul 27,2025, Elapsed time: 0:00:01
+Errors: 0, Warnings: 1
+# vsim -batch -lib qrun.out/work -do " run 30 ms; exit" -statslog qrun.out/stats_log qrun_opt -appendlog -l qrun.log 
+# Start time: 12:34:30 on Jul 27,2025
+# //  Questa Sim-64
+# //  Version 2024.3_1 linux_x86_64 Oct 17 2024
+# //
+# // Unpublished work. Copyright 2024 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# Loading sv_std.std
+# Loading work.systolic_array_tb(fast)
+# Loading work.systolic_array(fast)
+# Loading work.PE(fast)
+# Loading work.Controller(fast)
+# Loading work.mux_out(fast)
+# Loading work.matrix_sep(fast)
+# 
+# run 30 ms
+# Column 1 of Matrix A:
+# a11 = 4
+# a21 = 6
+# a31 = 6
+# a41 = 6
+# Row 1 of Matrix B:
+# b11 = 3
+# b12 = 2
+# b13 = 454
+# b14 = 76
+# Column 2 of Matrix A:
+# a12 = 34
+# a22 = 4
+# a32 = 4
+# a42 = 7
+# Row 2 of Matrix B:
+# b21 = 54
+# b22 = 7
+# b23 = 856
+# b24 = 0
+# Column 3 of Matrix A:
+# a13 = 0
+# a23 = 32
+# a33 = 3
+# a43 = 8
+# Row 3 of Matrix B:
+# b31 = 0
+# b32 = 0
+# b33 = 0
+# b34 = 56
+# Column 4 of Matrix A:
+# a14 = 23
+# a24 = 65
+# a34 = 5
+# a44 = 4
+# Row 4 of Matrix B:
+# b41 = 34
+# b42 = 3
+# b43 = 3
+# b44 = 3
+# row 1 of Matrix C:
+# c11 = 2630
+# c12 = 315
+# c13 = 30989
+# c14 = 373
+# row 2 of Matrix C:
+# c21 = 2444
+# c22 = 235
+# c23 = 6343
+# c24 = 2443
+# row 3 of Matrix C:
+# c31 = 404
+# c32 = 55
+# c33 = 6163
+# c34 = 639
+# row 4 of Matrix C:
+# c41 = 532
+# c42 = 73
+# c43 = 8728
+# c44 = 916
+# Column 1 of Matrix A:
+# a11 = -3
+# a21 = 32
+# a31 = 43
+# a41 = -3
+# Row 1 of Matrix B:
+# b11 = 32
+# b12 = 4
+# b13 = 56
+# b14 = 9
+# Column 2 of Matrix A:
+# a12 = -32
+# a22 = 4
+# a32 = 4
+# a42 = -3
+# Row 2 of Matrix B:
+# b21 = 8
+# b22 = 7
+# b23 = 6
+# b24 = 54
+# Column 3 of Matrix A:
+# a13 = -4
+# a23 = 54
+# a33 = 3
+# a43 = 43
+# Row 3 of Matrix B:
+# b31 = 76
+# b32 = 56
+# b33 = 8
+# b34 = 7
+# Column 4 of Matrix A:
+# a14 = 332
+# a24 = 65
+# a34 = 3
+# a44 = 32
+# Row 4 of Matrix B:
+# b41 = 65
+# b42 = 76
+# b43 = 7
+# b44 = 8
+# row 1 of Matrix C:
+# c11 = 20924
+# c12 = 24772
+# c13 = 1932
+# c14 = 873
+# row 2 of Matrix C:
+# c21 = 9385
+# c22 = 8120
+# c23 = 2703
+# c24 = 1402
+# row 3 of Matrix C:
+# c31 = 1831
+# c32 = 596
+# c33 = 2477
+# c34 = 648
+# row 4 of Matrix C:
+# c41 = 5228
+# c42 = 4807
+# c43 = 382
+# c44 = 368
+# ** Note: $stop    : testbench.sv(236)
+#    Time: 1040 ns  Iteration: 0  Instance: /systolic_array_tb
+# Break in Module systolic_array_tb at testbench.sv line 236
+# Stopped at testbench.sv line 236
+# exit
+# End time: 12:34:31 on Jul 27,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+End time: 12:34:31 on Jul 27,2025, Elapsed time: 0:00:02
+*** Summary *********************************************
+    qrun: Errors:   0, Warnings:   0
+    vlog: Errors:   0, Warnings:   0
+    vopt: Errors:   0, Warnings:   1
+    vsim: Errors:   0, Warnings:   0
+  Totals: Errors:   0, Warnings:   1
